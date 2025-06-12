@@ -6,6 +6,10 @@ module.exports = defineConfig({
   viewportWidth: 1700,
   e2e: {
     fixturesFolder: false, // indicates to Cypress that folder fixture will be not used.
+    retries: {
+      runMode: 2,
+      openMode: 0,
+    },
     setupNodeEvents(on, config) {
       cypressSplit(on, config)
       return config

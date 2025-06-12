@@ -9,16 +9,18 @@ describe("Cypress Simulator - A11y Checks", () => {
         cy.injectAxe()
     })
 
-  it("successfully simulates a Cypress command (e.g., cy.log('Yay!')", () => {
-    cy.run("cy.log('Yay!')")
+Cypress._.times(100, () => {
+    it("successfully simulates a Cypress command (e.g., cy.log('Yay!')", () => {
+      cy.run("cy.log('Yay!')")
 
-    cy.get("#outputArea")
-      .should("contain", "Success")
-      .and("contain", "cy.log('Yay!') // Logged message 'Yay!'")
-      .and('be.visible')
+      cy.get("#outputArea")
+        .should("contain", "Success")
+        .and("contain", "cy.log('Yay!') // Logged message 'Yay!'")
+        .and('be.visible')
 
-    cy.checkA11y(".success")
+      cy.checkA11y(".success")
   })
+})
 
   it("shows an error when entering and running an invalid Cypress command (e.g., cy.run()", () => {
     cy.run("cy.run()")
