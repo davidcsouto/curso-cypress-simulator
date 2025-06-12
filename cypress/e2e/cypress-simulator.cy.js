@@ -36,7 +36,7 @@ describe("Cypress Simulator", () => {
   })
 
   it("shows an error when entering and running a valid Cypress command without parentheses (e.g., cy.visit)", () => {
-    cy.run("cy.visit('https://google.com')")
+    cy.run("cy.visit")
 
     cy.get("#outputArea")
       .should("contain", "Error")
