@@ -247,3 +247,17 @@ describe('Cypress Simulator - Captcha', () => {
     cy.get('@buttonVerify').should('be.disabled')
   })
 })
+
+describe('Glitch in the Matrix', () => {
+  beforeEach(() => {
+    cy.visit('./src/index.html?skipCaptcha=true&chancesOfError=1')
+    cy.contains('button', 'Login').click()
+  })
+
+  it('errors out with a glitch in the Matrix', () => {
+    cy.run("cy.visit('https://example.com')")
+    cy.get("#outputArea")
+      .should("contain", "There's a glitch in the Matrix.")
+      .and("be.visible")
+  })
+})
