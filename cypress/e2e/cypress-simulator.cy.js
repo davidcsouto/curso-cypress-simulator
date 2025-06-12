@@ -1,7 +1,7 @@
 describe("Cypress Simulator", () => {
   beforeEach(() =>{
     cy.login()
-    cy.visit("./src/index.html?skipCaptcha=true", {
+    cy.visit("./src/index.html?skipCaptcha=true&chancesOfError=0", {
       onBeforeLoad: (contentWindow) => {
         contentWindow.localStorage.setItem("cookieConsent", "accepted")
       }
