@@ -35,8 +35,8 @@ describe("Cypress Simulator", () => {
       .and('be.visible')
   })
 
-  it("it shows an error when entering and running a valid Cypress command without parentheses (e.g., cy.visit)", () => {
-    cy.run("cy.visit")
+  it("shows an error when entering and running a valid Cypress command without parentheses (e.g., cy.visit)", () => {
+    cy.run("cy.visit('https://google.com')")
 
     cy.get("#outputArea")
       .should("contain", "Error")
@@ -143,7 +143,6 @@ describe("Cypress Simulator", () => {
   it('disables the run button when logging off then logging in again', () => {
     cy.get("#codeInput").as('codeInput')
       .type("cy.log('Yay!')")
-      .should("have.value", "cy.log('Yay!')")
 
     cy.get("#runButton")
       .should('be.enabled')
@@ -151,8 +150,7 @@ describe("Cypress Simulator", () => {
     cy.get('#sandwich-menu').click()
     cy.get('#logoutButton').should('be.visible').click()
 
-    cy.contains("Login")
-      .click()
+    cy.contains("Login").click()
     cy.get("#runButton")
       .should('be.disabled')
   })

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const captchaError = document.getElementById("captchaError")
 
   // eslint-disable-next-line no-undef
-  lucide.createIcons
+  lucide.createIcons()
 
   const urlParams = new URLSearchParams(window.location.search)
   const chancesOfError = urlParams.get("chancesOfError")
@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mainContent.style.display = "flex"
       sandwichMenu.style.display = "flex"
       captchaError.style.display = "none"
-      captchaInput.value = ""
+      // captchaInput.value = ""
       verifyCaptchaButton.disabled = true
 
       checkCookieConsent()
