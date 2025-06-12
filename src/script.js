@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const captchaError = document.getElementById("captchaError")
 
   // eslint-disable-next-line no-undef
-  lucide.createIcons()
+  lucide.createIcons
 
   const urlParams = new URLSearchParams(window.location.search)
   const chancesOfError = urlParams.get("chancesOfError")
