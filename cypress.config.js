@@ -15,5 +15,6 @@ module.exports = defineConfig({
       return config
     }
   },
-  defaultCommandTimeout: 6000
+  defaultCommandTimeout: 6000,
+  chromeWebSecurity: false
 })
